@@ -37,6 +37,13 @@ class DateTimeValue implements HasTimezones
         return $this->dateTime->format($format);
     }
 
+    public function formatWithTimezone(): string
+    {
+        $format = $this->withTime ? 'Ymd\THisp' : 'Ymd';
+
+        return $this->dateTime->format($format);
+    }
+
     public function hasTime(): bool
     {
         return $this->withTime;
