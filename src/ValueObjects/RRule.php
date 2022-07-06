@@ -144,7 +144,7 @@ class RRule implements HasTimezones
         }
 
         if ($this->until !== null) {
-            $properties['UNTIL'] = DateTimeValue::create($this->until, true)->format();
+            $properties['UNTIL'] = DateTimeValue::create($this->until, true)->format() . "Z";
         }
 
         if ($this->count !== null) {
